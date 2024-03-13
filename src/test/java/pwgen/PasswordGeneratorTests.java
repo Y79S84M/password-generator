@@ -6,5 +6,5 @@ public class PasswordGeneratorTests {
 
 	@Test
 	void pwgenTestsAreReady() {}
-	
+
 }
