@@ -1,4 +1,4 @@
-package pwgen.in.validation;
+package pwgen.validation;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import fr.ysaintmartin.pwgen.app.exception.InvalidArgumentsException;
 import fr.ysaintmartin.pwgen.app.exception.NoArgsException;
-import fr.ysaintmartin.pwgen.in.validation.CmdValidator;
+import fr.ysaintmartin.pwgen.app.validation.CmdValidator;
 
 public class CmdValidatorTests {
 	

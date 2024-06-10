@@ -1,6 +1,6 @@
 package fr.ysaintmartin.pwgen;
 
-import fr.ysaintmartin.pwgen.in.validation.CmdValidator;
+import fr.ysaintmartin.pwgen.app.validation.CmdValidator;
 
 public class PasswordGenerator {
 
