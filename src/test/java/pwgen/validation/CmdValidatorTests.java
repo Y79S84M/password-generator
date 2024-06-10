@@ -1,5 +1,6 @@
 package pwgen.validation;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,6 +14,7 @@ public class CmdValidatorTests {
 	
 	private final String[] NO_ARGS_GIVEN = {}; 
 	private final String[] INVALID_ARGS_GIVEN = {"--l","16"};
+	private final String[] LENGTH_OF_14_GIVEN = {"-l","14"};
 
 	@Test
 	void whenRunningPwGenWithNoArgs_returnsNoArgsException() {
@@ -50,5 +52,10 @@ public class CmdValidatorTests {
 		String actualMessage = ex.getMessage();
 		
 		assertTrue(expectedMessage.equals(actualMessage));
+	}
+	
+	@Test
+	void whenRunningPwGenWithLengthArg_returnsNoException() throws Exception {
+		assertAll(() -> CmdValidator.check(LENGTH_OF_14_GIVEN));
 	}
 }
