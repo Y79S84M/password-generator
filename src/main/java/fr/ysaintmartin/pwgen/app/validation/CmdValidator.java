@@ -26,8 +26,6 @@ public class CmdValidator {
 		if(CommandFlags.LENGTH.isMissing(args)) {
 			throw new InvalidArgumentsException(INVALID_ARGS_ERROR_MESSAGE);
 		}
-		
-
 	}
 	
 	
