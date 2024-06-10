@@ -1,4 +1,4 @@
-package fr.ysaintmartin.pwgen.app.validation;
+package fr.ysaintmartin.pwgen.app.enumeration;
 
 import java.util.List;
 

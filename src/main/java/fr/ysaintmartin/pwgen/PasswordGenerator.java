@@ -18,7 +18,6 @@ public class PasswordGenerator {
 			System.exit(0);
 		}
 		
-		
 	}
 
 }

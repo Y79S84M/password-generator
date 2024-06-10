@@ -2,6 +2,7 @@ package fr.ysaintmartin.pwgen.app.validation;
 
 import java.util.List;
 
+import fr.ysaintmartin.pwgen.app.enumeration.CommandFlags;
 import fr.ysaintmartin.pwgen.app.exception.InvalidArgumentsException;
 import fr.ysaintmartin.pwgen.app.exception.NoArgsException;
 
@@ -27,7 +28,4 @@ public class CmdValidator {
 			throw new InvalidArgumentsException(INVALID_ARGS_ERROR_MESSAGE);
 		}
 	}
-	
-	
-	
 }
