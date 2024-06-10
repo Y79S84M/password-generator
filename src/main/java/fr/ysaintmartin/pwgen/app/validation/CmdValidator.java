@@ -1,6 +1,5 @@
 package fr.ysaintmartin.pwgen.app.validation;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.ysaintmartin.pwgen.app.exception.InvalidArgumentsException;
@@ -20,17 +19,11 @@ public class CmdValidator {
 			---------------------------------------------------------------------------------
 			""";
 	
-	public static void check(String[] args) throws NoArgsException, InvalidArgumentsException {
-		if(args.length<=0) {
+	public static void check(List<String> args) throws NoArgsException, InvalidArgumentsException {
+		if(args.isEmpty()) {
 			throw new NoArgsException(NO_ARGS_ERROR_MESSAGE);
-		} 
-			
-		List<String> argsList = new ArrayList<>();
-		for (String string : args) {
-			argsList.add(string);
 		}
-		
-		if(CommandFlags.LENGTH.isMissing(argsList)) {
+		if(CommandFlags.LENGTH.isMissing(args)) {
 			throw new InvalidArgumentsException(INVALID_ARGS_ERROR_MESSAGE);
 		}
 		

@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import fr.ysaintmartin.pwgen.app.exception.InvalidArgumentsException;
@@ -12,9 +14,9 @@ import fr.ysaintmartin.pwgen.app.validation.CmdValidator;
 
 public class CmdValidatorTests {
 	
-	private final String[] NO_ARGS_GIVEN = {}; 
-	private final String[] INVALID_ARGS_GIVEN = {"--l","16"};
-	private final String[] LENGTH_OF_14_GIVEN = {"-l","14"};
+	private final List<String> NO_ARGS_GIVEN = List.of(); 
+	private final List<String> INVALID_ARGS_GIVEN = List.of("-invalid","15");
+	private final List<String> LENGTH_OF_15_GIVEN = List.of("-l","15");
 
 	@Test
 	void whenRunningPwGenWithNoArgs_returnsNoArgsException() {
@@ -56,6 +58,6 @@ public class CmdValidatorTests {
 	
 	@Test
 	void whenRunningPwGenWithLengthArg_returnsNoException() throws Exception {
-		assertAll(() -> CmdValidator.check(LENGTH_OF_14_GIVEN));
+		assertAll(() -> CmdValidator.check(LENGTH_OF_15_GIVEN));
 	}
 }

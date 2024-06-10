@@ -1,5 +1,7 @@
 package fr.ysaintmartin.pwgen;
 
+import java.util.List;
+
 import fr.ysaintmartin.pwgen.app.validation.CmdValidator;
 
 public class PasswordGenerator {
@@ -8,8 +10,8 @@ public class PasswordGenerator {
 		
 		System.out.println("The application checks your requirements.");
 		try {
-			CmdValidator.check(args);
-			
+			List<String> argsList = List.of(args);
+			CmdValidator.check(argsList);
 		} catch(Exception ex) {
 			System.out.println(ex.getMessage());
 		} finally {
