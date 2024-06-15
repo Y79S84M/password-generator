@@ -17,6 +17,7 @@ public class CmdValidatorTests {
 	private final List<String> NO_ARGS_GIVEN = List.of(); 
 	private final List<String> INVALID_ARGS_GIVEN = List.of("-invalid","15");
 	private final List<String> LENGTH_OF_15_GIVEN = List.of("-l","15");
+	private final List<String> LENGTH_AND_ROBUSTNESS = List.of("-l","16","-r","standard");
 
 	@Test
 	void whenRunningPwGenWithNoArgs_returnsNoArgsException() {
@@ -59,5 +60,10 @@ public class CmdValidatorTests {
 	@Test
 	void whenRunningPwGenWithLengthArg_returnsNoException() throws Exception {
 		assertAll(() -> CmdValidator.check(LENGTH_OF_15_GIVEN));
+	}
+
+	@Test
+	void whenRunningPwGenWithLengthArgAndRobustnessArg_returnsNoException() throws Exception {
+		assertAll(() -> CmdValidator.check(LENGTH_AND_ROBUSTNESS));
 	}
 }
